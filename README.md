@@ -15,4 +15,4 @@
 #### 파일변경, 추가한 후 Repository push 하기
 - 압축하기 : **git add .**
 - commit (왜 commit 했는가?) : **git commit -m "Hello 2 프로젝트 작성"**
-- push : **git push**
+- push : **git push*
