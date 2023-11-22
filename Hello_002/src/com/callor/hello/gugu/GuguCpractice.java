@@ -13,64 +13,16 @@ public class GuguCpractice {
 
 		System.out.println("====================");
 		System.out.println(num1 + "단 구구단");
+		System.out.println("--------------------");
+
+		for (int i = 0; i < 9; i++) {
+			System.out.print(num1);
+			System.out.print(" x ");
+			System.out.print(index);
+			System.out.print(" = ");
+			System.out.println(num1 * index);
+			index = index + 1;
+		}
 		System.out.println("====================");
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-		
-		System.out.print(num1);
-		System.out.print(" x ");
-		System.out.print(index);
-		System.out.print(" = ");
-		System.out.println(num1 * index);
-		index = index + 1;
-	
-
-
 	}
 }
