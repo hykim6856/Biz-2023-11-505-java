@@ -2,7 +2,7 @@ package com.callor.hello.algorithm;
 
 public class AlgC {
 	public static void main(String[] args) {
-		int num1 = 33332;
+		int num1 = 33333;
 		boolean bYes = false;
 		
 		/*
@@ -18,5 +18,9 @@ public class AlgC {
 		if (bYes) {
 			System.out.println("짝수"); //조건, 선택 명령문
 		}
+		if(num1 %2 == 0) {
+			System.out.println("짝수");
+		}
+			
 	}
 }
