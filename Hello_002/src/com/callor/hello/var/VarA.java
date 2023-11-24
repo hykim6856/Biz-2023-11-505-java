@@ -28,5 +28,7 @@ public class VarA {
 		int scoreMath = 0;
 		int scoreMusic = 0;
 		int scoreArt = 0;
+		System.out.println(num1+num2);
+		System.out.println(sum+intKor+intEng+intTotal+scpreKor+scoreEng+scoreMath+scoreMusic+scoreArt);
 	}
 }

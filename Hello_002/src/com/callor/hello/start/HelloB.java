@@ -21,7 +21,7 @@ public class HelloB {
 		long num3 = 30;
 		long num4 = 40;
 
-		
+		System.out.println(num1+num2+num3+num4);
 	}
 
 }
