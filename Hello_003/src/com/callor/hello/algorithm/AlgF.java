@@ -11,30 +11,71 @@ public class AlgF {
 		 */
 		//======================================================================
 		//일단 해보기		
+		System.out.println("=================================");
 		int pay =3587964;
-		System.out.println("오만원   : "+pay/50000+" 매");
+		System.out.println("오만원 : "+pay/50000+" 매");
 		pay = pay % 50000;
-		System.out.println("만원     : "+pay/10000+" 매");
+		System.out.println("만원   : "+pay/10000+" 매");
 		pay = pay % 10000;
-		System.out.println("오천원   : "+pay/5000+" 매");
+		System.out.println("오천원 : "+pay/5000+" 매");
 		pay = pay % 5000;
-		System.out.println("천원     : "+pay/1000+" 매");
+		System.out.println("천원   : "+pay/1000+" 매");
 		pay = pay % 1000;
-		System.out.println("오백원   : "+pay/500+" 매");
+		System.out.println("오백원 : "+pay/500+" 매");
 		pay = pay % 500;
-		System.out.println("백원     : "+pay/100+" 매");
+		System.out.println("백원   : "+pay/100+" 매");
 		pay = pay % 100;		
-		System.out.println("오십원   : "+pay/50+" 매");
+		System.out.println("오십원 : "+pay/50+" 매");
 		pay = pay % 50;		
-		System.out.println("십원     : "+pay/10+" 매");
+		System.out.println("십원   : "+pay/10+" 매");
 		pay = pay % 10;		
+		System.out.println("---------------------------------");
 		
 		//-------------------------------------------------------------------
 		//검산
+		System.out.print("검산: ");
 		System.out.println(71*50000+3*10000+1*5000+2*1000+1*500+4*100+1*50+1*10);
 		
 		//======================================================================
 		//좀 더 간단하게 만들 수 있을지 고민하기
+		System.out.println("=================================");
+		pay =3587964;
+		System.out.print("오만원: ");
+		System.out.print(pay/50000);
+		System.out.println(" 매");
+		System.out.print("만원  : ");
+		System.out.print((pay=(pay% 50000))/10000);
+		System.out.println(" 매");
+		System.out.print("오천원: ");
+		System.out.print((pay=(pay% 10000))/5000);
+		System.out.println(" 매");
+		System.out.print("천원  : ");
+		System.out.print((pay=(pay% 5000))/1000);
+		System.out.println(" 매");
+		System.out.print("오백원: ");
+		System.out.print((pay=(pay% 1000))/500);
+		System.out.println(" 매");
+		System.out.print("백원  : ");
+		System.out.print((pay=(pay% 500))/100);
+		System.out.println(" 매");
+		System.out.print("오십원: ");
+		System.out.print((pay=(pay% 100))/50);
+		System.out.println(" 매");
+		System.out.print("십원  : ");
+		System.out.print((pay=(pay% 50))/10);
+		System.out.println(" 매");
+		System.out.println("=================================");
 		
+		//좀 더 짧게 만들기
+		pay =3587964;
+		System.out.println("오만원: "+ (pay/50000 +" 매"));
+		System.out.println("만원  : "+(pay=(pay% 50000))/10000+" 매");
+		System.out.println("오천원: "+(pay=(pay% 10000))/5000+" 매");
+		System.out.println("천원  : "+(pay=(pay% 5000))/1000+" 매");
+		System.out.println("오백원: "+(pay=(pay% 1000))/500+" 매");
+		System.out.println("백원  : "+(pay=(pay% 500))/100+" 매");
+		System.out.println("오십원: "+(pay=(pay% 100))/50+" 매");
+		System.out.println("십원  : "+(pay=(pay% 50))/10+" 매");
+		System.out.println("=================================");
 	}
 }
