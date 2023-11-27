@@ -60,7 +60,7 @@ public class PrimeH {
 	            }
 	        }
 
-	        System.out.println(sum);
+	        System.out.printf("2부터 100까지의 소수들의 합:%d",sum);
 	    }
 	}
 
