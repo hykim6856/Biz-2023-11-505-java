@@ -22,29 +22,31 @@ public class StringC {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		scan = new Scanner(is);
 
 		// 오픈한 데이터 txt 파일에 대한 정보를 스캐너와 연결해주기
 		while (scan.hasNext()) {
 			String line = scan.nextLine();
-			String nums = line;
+	
 
 			// result에 각각 나뉜 정수를 할당
-			String[] result = nums.split(",");
+			String[] result = line.split(",");
 			// 각합계를 넣을 배열 만들기
-			int[] sum = new int[result.length];
+			int sum = 0;
 
 			// 각 배열에 7과목을 정수로 변환하여 합계도출
 			for (int i = 1; i < result.length; i++) {
-				for (int j = 1; j < result.length; j++) {
-				sum[i] += Integer.valueOf(result[j]);
-			}}
-			//각 라인과 합계 출력
+				//for (int j = 1; j < result.length; j++) {
+					sum += Integer.valueOf(result[i]);
+				//}
+			}
+			// 각 라인과 합계 출력
+			for (int i = 1; i < 2; i++) {
 				System.out.printf(line);
-				for (int i = 1; i < 2; i++) {
-				System.out.println(sum[i]);
+				System.out.println(" "+sum);
+//				System.out.printf(scan.nextLine());
+	//			System.out.println(sum);
 			}
 		}
 		scan.close();
