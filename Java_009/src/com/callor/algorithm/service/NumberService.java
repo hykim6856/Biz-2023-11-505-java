@@ -20,7 +20,6 @@ public class NumberService {
 	}
 	public int inputNum(String title) {
 		System.out.print(title + "입력해주세요>>");
-		
 		String str = scan.nextLine();
 		
 		int num = 0 ; 
