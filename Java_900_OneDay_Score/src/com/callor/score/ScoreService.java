@@ -50,11 +50,11 @@ public class ScoreService {
 		int sumSum = 0;
 		float avgAvg = 0;
 
-		int korAvg = 0;
-		int engAvg = 0;
-		int mathAvg = 0;
-		int musicAvg = 0;
-		int artAvg = 0;
+		float korAvg = 0;
+		float engAvg = 0;
+		float mathAvg = 0;
+		float musicAvg = 0;
+		float artAvg = 0;
 
 		Line.dLine(80);
 		System.out.println("* 한울 고교 성적 리스트 *");
@@ -79,11 +79,11 @@ public class ScoreService {
 			artSum += dto.art;
 			sumSum += dto.getTotal();
 
-			korAvg = korSum / scores.size();
-			engAvg = engSum / scores.size();
-			mathAvg = mathSum / scores.size();
-			musicAvg = musicSum / scores.size();
-			artAvg = artSum / scores.size();
+			korAvg = (float)korSum / scores.size();
+			engAvg = (float)engSum / scores.size();
+			mathAvg = (float)mathSum / scores.size();
+			musicAvg = (float)musicSum / scores.size();
+			artAvg = (float)artSum / scores.size();
 			avgAvg = avgAvg + dto.getAvg() / (float) scores.size();
 
 		}
@@ -99,11 +99,11 @@ public class ScoreService {
 		System.out.printf("\n");
 		// 평균 : "
 		System.out.printf(" 평균\t\t");
-		System.out.printf("%3d\t", korAvg);
-		System.out.printf("%3d\t", engAvg);
-		System.out.printf("%3d\t", mathAvg);
-		System.out.printf("%3d\t", musicAvg);
-		System.out.printf("%3d\t", artAvg);
+		System.out.printf("%5.2f\t", korAvg);
+		System.out.printf("%5.2f\t", engAvg);
+		System.out.printf("%5.2f\t", mathAvg);
+		System.out.printf("%5.2f\t", musicAvg);
+		System.out.printf("%5.2f\t", artAvg);
 		System.out.printf("\t%5.2f\t", avgAvg);
 		System.out.printf("\n");
 		Line.dLine(80);

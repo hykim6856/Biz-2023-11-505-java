@@ -8,7 +8,6 @@ public class RndScore {
 		for (int i = 0; i < stdNum; i++) {
 			scoreService.creScore();
 		}
-
 		scoreService.printScore();
 	}
 }

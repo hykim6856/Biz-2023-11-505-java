@@ -12,6 +12,7 @@ public class ScoreDto {
 	private int total;
 	private float avg;
 
+	
 	public int getTotal() {
 		total = kor;
 		total += eng;
