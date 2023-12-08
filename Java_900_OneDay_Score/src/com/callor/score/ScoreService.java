@@ -57,7 +57,7 @@ public class ScoreService {
 		int artAvg = 0;
 
 		Line.dLine(80);
-		System.out.println("* 성적 리스트 *");
+		System.out.println("* 한울 고교 성적 리스트 *");
 		Line.dLine(80);
 		System.out.println(" 학번\t\t국어\t영어\t수학\t음악\t미술\t총점\t평균");
 		Line.sLine(80);
