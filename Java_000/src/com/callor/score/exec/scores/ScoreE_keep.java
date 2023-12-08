@@ -1,4 +1,4 @@
-package com.callor.score.exec;
+package com.callor.score.exec.scores;
 
 import java.util.ArrayList;
 import java.util.List;

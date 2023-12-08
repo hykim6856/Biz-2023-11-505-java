@@ -1,4 +1,4 @@
-package com.callor.score.exec;
+package com.callor.score.exec.scores;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,35 +8,17 @@ import com.callor.score.service.NumberService;
 import com.callor.score.uitls.Line;
 
  
-public class ScoreDA {
+public class ScoreE_keep {
 
 	public static void main(String[] args) {
 		NumberService numservice = new NumberService();
-		List<ScoreDto> scores = new ArrayList<ScoreDto>();
-	
-		int start = 50;
-		int end = 100;
-		
+	 
+	 
+		/*
 		for (int i = 0; i < 3; i++) {
-			int stNum = i + 1;
-			String stdNum= String.format("S%04d, i+1");
-		
-			int num1 = numservice.inputNumber(stNum + "번의 국어 점수를", start, end);
-			int num2 = numservice.inputNumber(stNum + "번의 영어 점수를", start, end);
-			int num3 = numservice.inputNumber(stNum + "번의 수학 점수를", start, end);
-		
-			ScoreDto scoreDto = new ScoreDto();
-		
-			scoreDto.stdNum= stdNum;
-		
-		
 			
-			scoreDto.kor = num1;
-			scoreDto.eng = num2;
-			scoreDto.math = num3;
-		
-			scores.add(scoreDto);
-
+			ScoreService_keep.inputScore(0,100);
+			
 		}
 
 		Line.dTitle("성적리스트", 50);
@@ -63,6 +45,6 @@ public class ScoreDA {
 			
 		}
 
-	}
+	}*/
 
-}
+}}

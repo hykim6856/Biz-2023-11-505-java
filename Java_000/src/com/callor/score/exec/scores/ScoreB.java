@@ -1,4 +1,4 @@
-package com.callor.score.exec;
+package com.callor.score.exec.scores;
 
 import com.callor.score.model.ScoreDto;
 import com.callor.score.service.NumberService;
