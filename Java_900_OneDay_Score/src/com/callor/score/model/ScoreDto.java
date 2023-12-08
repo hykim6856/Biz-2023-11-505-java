@@ -1,4 +1,4 @@
-package com.callor.score;
+package com.callor.score.model;
 
 public class ScoreDto {
 	public String stdNum;

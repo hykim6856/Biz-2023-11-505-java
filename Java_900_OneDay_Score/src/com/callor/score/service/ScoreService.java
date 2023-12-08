@@ -1,7 +1,10 @@
-package com.callor.score;
+package com.callor.score.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.callor.score.model.ScoreDto;
+import com.callor.score.utils.Line;
 
 public class ScoreService {
 	// 선언
@@ -13,31 +16,34 @@ public class ScoreService {
 	}
 
 	// 랜덤한 성적 만들기
-	public void creScore() {
-		String strStdNum = "230000";
-		if (scores.size() > 0) {
-			strStdNum = scores.get(scores.size() - 1).stdNum;
+	public void creScore(int stdNum) {
+
+		for (int i = 0; i < stdNum; i++) {
+			String strStdNum = "230000";
+			if (scores.size() > 0) {
+				strStdNum = scores.get(scores.size() - 1).stdNum;
+			}
+			int intStdNum = Integer.valueOf(strStdNum.substring(2));
+			intStdNum++;
+
+			strStdNum = String.format("23%04d", intStdNum);
+
+			int scoreKor = (int) (Math.random() * 50) + 51;
+			int scoreEng = (int) (Math.random() * 50) + 51;
+			int scoreMath = (int) (Math.random() * 50) + 51;
+			int scoreMusic = (int) (Math.random() * 50) + 51;
+			int scoreArt = (int) (Math.random() * 50) + 51;
+
+			ScoreDto scoreDto = new ScoreDto();
+			scoreDto.stdNum = strStdNum;
+			scoreDto.kor = scoreKor;
+			scoreDto.eng = scoreEng;
+			scoreDto.math = scoreMath;
+			scoreDto.music = scoreMusic;
+			scoreDto.art = scoreArt;
+
+			scores.add(scoreDto);
 		}
-		int intStdNum = Integer.valueOf(strStdNum.substring(2));
-		intStdNum++;
-
-		strStdNum = String.format("23%04d", intStdNum);
-
-		int scoreKor = (int) (Math.random() * 50) + 51;
-		int scoreEng = (int) (Math.random() * 50) + 51;
-		int scoreMath = (int) (Math.random() * 50) + 51;
-		int scoreMusic = (int) (Math.random() * 50) + 51;
-		int scoreArt = (int) (Math.random() * 50) + 51;
-
-		ScoreDto scoreDto = new ScoreDto();
-		scoreDto.stdNum = strStdNum;
-		scoreDto.kor = scoreKor;
-		scoreDto.eng = scoreEng;
-		scoreDto.math = scoreMath;
-		scoreDto.music = scoreMusic;
-		scoreDto.art = scoreArt;
-
-		scores.add(scoreDto);
 	}
 
 	// 성적표 출력하기
@@ -55,6 +61,8 @@ public class ScoreService {
 		float mathAvg = 0;
 		float musicAvg = 0;
 		float artAvg = 0;
+
+		int stdNum = 0;
 
 		Line.dLine(80);
 		System.out.println("* 한울 고교 성적 리스트 *");
@@ -78,15 +86,17 @@ public class ScoreService {
 			musicSum += dto.music;
 			artSum += dto.art;
 			sumSum += dto.getTotal();
-
-			korAvg = (float)korSum / scores.size();
-			engAvg = (float)engSum / scores.size();
-			mathAvg = (float)mathSum / scores.size();
-			musicAvg = (float)musicSum / scores.size();
-			artAvg = (float)artSum / scores.size();
-			avgAvg = avgAvg + dto.getAvg() / (float) scores.size();
-
 		}
+		stdNum = scores.size();// 학생 수
+		korAvg = (float) korSum / stdNum;
+		engAvg = (float) engSum / stdNum;
+		mathAvg = (float) mathSum / stdNum;
+		musicAvg = (float) musicSum / stdNum;
+		artAvg = (float) artSum / stdNum;
+
+		float avgSum = korAvg + engAvg + mathAvg + musicAvg + artAvg;
+		avgAvg = avgSum / 5;
+
 		Line.sLine(80);
 		// 총점 : 국어, 영어, 수학, 음악, 미술, 총 총점. 각각 구하기
 		System.out.printf(" 총점\t\t");
