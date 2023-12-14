@@ -34,6 +34,7 @@ public class StudentServiceImplV1 implements StudentService {
 	// 학번을 매개 변수로 전달받아 students 리스트를 검색하여 동일한 학번의 요소가 있으면 그 요소를 return
 	// 없으면 null을 return
 	protected StudentDto selctStdNum(String num) {
+		// TODO: 학생정보 찾기
 		for (StudentDto std : students) {
 			if (std.stdNum.equals(num)) {
 				return std;
@@ -43,45 +44,80 @@ public class StudentServiceImplV1 implements StudentService {
 		return null;
 	}
 
+	protected String newStdNum() {
+		String stdNum = "S0001";
+		if (!students.isEmpty()) {
+			stdNum = students.get(students.size() - 1).stdNum;
+		}
+
+		return stdNum;
+	}
+
 	@Override
 	public boolean inputStudent() {
+		// TODO: 한 학생의 정보 입력 받기
+
 		// 키보드로 학생의 개별 정보들 (학번, 이름 등) 을 입력받고 임시로 저장할 배열.
 		// StdIndex enum 에 선언된 요소의 개수를 세어서 그 개수를 사용하여 inputStr배열을 생성하
 		String[] inputStr = new String[StIndex.values().length];
 		for (StIndex item : StIndex.values()) {
 			while (true) {
-				System.out.printf("%s 입력 >>", item);
+
+				System.out.print(" 입력 (QUIT:종료)>>");
 				String str = keyBD.nextLine();
-				if (str.equals("QUIT"))
-					return false;
-				// 학번을 입력하는 경우 학번의 검사를 실시합니다.
-				if (item.toString().equals("학번") && this.selctStdNum(str) != null) {
-					System.out.println("학번중복");
-					continue;
+				System.out.printf("%s ", item);
+
+				String newStdnum = this.newStdNum();
+				if (item.toString().equals("학번")) {
+					if (str.isBlank()) {
+						System.out.printf("**학번은%s 를 사용함 \n", newStdnum);
+
+					}
+//				System.out.printf("%s 입력 >>", item);
+//				String str = keyBD.nextLine();
+					if (str.equals("QUIT"))
+						return false;
+					// 학번을 입력하는 경우 학번의 검사를 실시합니다.
+					if (item.toString().equals("학번")) {
+						if (str.isBlank()) {
+							System.out.printf("**학번은 %s 를 사용함\n", "S0001");
+						}
+
+						if (this.selctStdNum(str) != null) {
+
+							System.out.println("학번중복");
+							continue;
+						}
+					} else if (str.isBlank()) {
+						System.out.println("값을 입력해주세요");
+						System.out.printf("%s 는 필수항목입니다. \n", item);
+					}
+					// inputStr[item.getIndex()] = keyBD.nextLine();
+					// System.out.println();
+					// System.out.println(item + " : " + str);
+					inputStr[item.getIndex()] = str;
+
+					break;
 				}
-
-				// inputStr[item.getIndex()] = keyBD.nextLine();
-				// System.out.println();
-				// System.out.println(item + " : " + str);
-				inputStr[item.getIndex()] = str;
-
-				break;
 			}
-		}
-		StudentDto stDto = new StudentDto();
-		stDto.stdNum = inputStr[StIndex.학번.getIndex()];
-		stDto.stdName = inputStr[StIndex.이름.getIndex()];
-		stDto.stdDept = inputStr[StIndex.학과.getIndex()];
-		stDto.stdGrade = inputStr[StIndex.학년.getIndex()];
-		stDto.stdTel = inputStr[StIndex.전화번호.getIndex()];
-		stDto.stdAddr = inputStr[StIndex.주소.getIndex()];
-		students.add(stDto);
+			StudentDto stDto = new StudentDto();
+			stDto.stdNum = inputStr[StIndex.학번.getIndex()];
+			stDto.stdName = inputStr[StIndex.이름.getIndex()];
+			stDto.stdDept = inputStr[StIndex.학과.getIndex()];
+			stDto.stdGrade = inputStr[StIndex.학년.getIndex()];
+			stDto.stdTel = inputStr[StIndex.전화번호.getIndex()];
+			stDto.stdAddr = inputStr[StIndex.주소.getIndex()];
+			students.add(stDto);
 
-		return true;
+			return true;
+		}
+		return false;
 	}
 
 	@Override
 	public void inputStudents() {
+		// TODO:여러 학생정보 입력받기
+
 		boolean result = true;
 		while (result) {
 			Line.sLine(50);
@@ -99,6 +135,8 @@ public class StudentServiceImplV1 implements StudentService {
 
 	@Override
 	public void printStudent() {
+		// TODO: 학생정보 출력하기
+
 		Line.dLine(90);
 		System.out.println("한울고교 학생정보");
 		Line.dLine(90);
@@ -113,6 +151,12 @@ public class StudentServiceImplV1 implements StudentService {
 			System.out.printf("%s\t\n", dto.stdAddr);
 
 		}
+
+	}
+
+	@Override
+	public void saveStudent() {
+		// TODO Auto-generated method stub
 
 	}
 

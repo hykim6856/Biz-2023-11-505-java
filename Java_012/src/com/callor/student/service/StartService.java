@@ -8,8 +8,8 @@ package com.callor.student.service;
 public interface StartService {
 // 코드블럭이 없는 메서드들을 추상 메서드라고 한다.
 	public void mainMenu();
-	
+
 	public Integer selectMenu();
-	
+
 	public void startApp();
 }
